@@ -63,3 +63,6 @@ enable_error_code = [
     "possibly-undefined",
     "mutable-override",
 ]
+
+[tool.pyproject-fmt]
+indent = 4

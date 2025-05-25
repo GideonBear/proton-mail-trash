@@ -59,3 +59,8 @@ repos:
         pass_filenames: false # Check all files to be thorough
         args: # Removes default `--ignore-missing-imports`
           - .
+
+  - repo: https://github.com/tox-dev/pyproject-fmt
+    rev: "v2.5.1"
+    hooks:
+      - id: pyproject-fmt
