@@ -1,9 +1,11 @@
+from __future__ import annotations
+
 import webbrowser
-from datetime import date, timedelta, datetime
+from datetime import date, datetime, timedelta
 
 
 def main() -> None:
-    today = date.today()
+    today = date.today()  # noqa: DTZ011 only using naive datetimes
     interval = timedelta(days=30)
 
     end = today - interval
