@@ -59,5 +59,3 @@ repos:
         pass_filenames: false # Check all files to be thorough
         args: # Removes default `--ignore-missing-imports`
           - .
-        additional_dependencies:
-          - packaging
