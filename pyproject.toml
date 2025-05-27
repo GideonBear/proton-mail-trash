@@ -8,6 +8,7 @@ name = "proton-mail-trash"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
+license = "GPL-3.0-only"
 authors = [
     { name = "GideonBear" },
 ]
