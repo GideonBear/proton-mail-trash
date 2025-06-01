@@ -27,7 +27,7 @@ scripts.proton-mail-trash = "proton_mail_trash:main"
 [tool.ruff]
 lint.select = [ "ALL" ]
 
-lint.ignore = [
+testing = [
     "COM812", # Conflict with formatter
     "CPY",    # No copyright statements
     "D1",     # Docstrings should not be enforced by default
