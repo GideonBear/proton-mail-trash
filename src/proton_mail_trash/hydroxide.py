@@ -10,7 +10,13 @@ from proton_mail_trash.utils import PopenContext
 
 
 PATH = Path(__file__).parent / "hydroxide"
-AUTH_PATH = Path.home() / ".config/hydroxide/auth.json"
+if sys.platform == "win32":
+    PATH = PATH.with_suffix(".exe")
+if sys.platform == "win32":
+    CONFIG_PATH = Path(os.getenv("APPDATA"))
+else:
+    CONFIG_PATH = Path.home() / ".config"
+AUTH_PATH = CONFIG_PATH / "hydroxide/auth.json"
 
 
 def build() -> None:
@@ -25,8 +31,11 @@ def build() -> None:
         print("Abort.")
         sys.exit(1)
 
+    bin_name = "hydroxide"
+    if sys.platform == "win32":
+        bin_name += ".exe"
     golang.build(
-        "https://github.com/emersion/hydroxide", "./cmd/hydroxide", "hydroxide", PATH
+        "https://github.com/emersion/hydroxide", "./cmd/hydroxide", bin_name, PATH
     )
 
 
