@@ -1,5 +1,6 @@
-# Largely copied from https://github.com/pre-commit/pre-commit/blob/main/pre_commit/languages/golang.py
-# license below:
+# This is a modified version of pre_commit/languages/golang.py
+# (https://github.com/pre-commit/pre-commit/blob/main/pre_commit/languages/golang.py)
+# from pre-commit (https://github.com/pre-commit/pre-commit). License below:
 
 # Copyright (c) 2014 pre-commit dev team: Anthony Sottile, Ken Struys
 #
