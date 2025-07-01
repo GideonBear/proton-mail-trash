@@ -3,6 +3,7 @@
 
 ## Installation
 Requires Python 3.13+
+
 Requires `git` to be installed
 ```bash
 # Using uv:
