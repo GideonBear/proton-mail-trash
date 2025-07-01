@@ -17,7 +17,7 @@ def build() -> None:
     if (
         input(
             "I will now bootstrap hydroxide. I only have to do this once. "
-            "This is done in an isolated environment. I only have to do this once.\n"
+            "This is done in an isolated environment.\n"
             "Continue? (y/n) "
         )
         != "y"
