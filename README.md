@@ -1,6 +1,7 @@
 # proton-mail-trash
 
 ## Installation
+Requires Python 3.13+
 ```bash
 # Using uv:
 uv tool install proton-mail-trash
