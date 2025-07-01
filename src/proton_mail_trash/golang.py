@@ -86,6 +86,13 @@ def _install_go(dest: Path) -> None:
 
 
 def build(repo_url: str, build_path: str, bin_name: str, bin_dest: Path) -> None:
+    if shutil.which("git") is None:
+        print(
+            "ERROR: git not found. "
+            "Please ensure git is installed and available on your PATH."
+        )
+        sys.exit(1)
+
     with TemporaryDirectory() as tempdir_s, chdir(tempdir_s):
         tempdir = Path(tempdir_s)
         print("Downloading go...")
