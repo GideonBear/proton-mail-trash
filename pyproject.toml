@@ -4,7 +4,7 @@ requires = [ "hatchling" ]
 
 [project]
 name = "proton-mail-trash"
-version = "1.1.0"
+version = "1.1.1"
 description = "Add your description here"
 readme = "README.md"
 license = "GPL-3.0-only"
