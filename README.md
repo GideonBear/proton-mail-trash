@@ -2,7 +2,8 @@
 `proton-mail-trash` will permanently delete all messages in your Proton Mail trash that are older than 30 days.
 
 ## Installation
-Requires Python 3.13+.
+Requires Python 3.13+
+Requires `git` to be installed
 ```bash
 # Using uv:
 uv tool install proton-mail-trash
