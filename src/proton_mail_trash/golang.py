@@ -89,7 +89,8 @@ def build(repo_url: str, build_path: str, bin_name: str, bin_dest: Path) -> None
     if shutil.which("git") is None:
         print(
             "ERROR: git not found. "
-            "Please ensure git is installed and available on your PATH."
+            "Please ensure git is installed and available on your PATH. "
+            "You can install it here: https://git-scm.com/downloads"
         )
         sys.exit(1)
 
