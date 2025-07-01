@@ -1,5 +1,5 @@
 # proton-mail-trash
-`proton-mail-trash` will permanently delete all messages in your Proton Mail trash that are older than 30 days.
+`proton-mail-trash` will permanently delete all messages in your Proton Mail trash that are older than 30 days. Note that **this is not the same as deleting messages that have been in the trash for more than 30 days**.
 
 Works on Linux and Windows!
 
