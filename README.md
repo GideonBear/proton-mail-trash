@@ -2,7 +2,7 @@
 `proton-mail-trash` will permanently delete all messages in your Proton Mail trash that are older than 30 days.
 
 ## Installation
-Requires Python 3.13+
+Requires Python 3.13+.
 ```bash
 # Using uv:
 uv tool install proton-mail-trash
@@ -16,6 +16,15 @@ pip install proton-mail-trash
 ```bash
 proton-mail-trash
 ```
+
+## Disclaimer
+Use this software only at your own risk, and review the code if you want to.
+
+This software uses Hydroxide's IMAP support, which is experimental.
+
+This software permanently deletes messages from your Proton Mail account.
+
+This software might not be an allowed use of Proton's products.
 
 ## Credits
 Only possible thanks to [Hydroxide, a third-party, open-source ProtonMail CardDAV, IMAP and SMTP bridge](https://github.com/emersion/hydroxide)!
