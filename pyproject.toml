@@ -4,7 +4,7 @@ requires = [ "uv-build>=0.8.8,<0.9" ]
 
 [project]
 name = "proton-mail-trash"
-version = "1.2.0"
+version = "1.2.1"
 description = "Add your description here"
 readme = "README.md"
 license = "GPL-3.0-only"
