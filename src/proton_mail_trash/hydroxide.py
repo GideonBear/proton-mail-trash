@@ -56,7 +56,9 @@ def get(user: str) -> Path:
 
 
 def run_path(hydroxide: Path) -> PopenContext:
-    p = PopenContext([hydroxide, "imap"])
+    p = PopenContext(
+        [hydroxide, "imap"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
+    )
     sleep(0.25)
     return p
 
