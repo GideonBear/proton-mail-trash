@@ -33,7 +33,6 @@ import shutil
 import subprocess
 import sys
 import tarfile
-import urllib
 import urllib.error
 import urllib.request
 import zipfile
