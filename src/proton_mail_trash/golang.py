@@ -64,6 +64,7 @@ if sys.platform == "win32":  # pragma: win32 cover
 
     def _open_archive(bio: IO[bytes]) -> AbstractContextManager[ExtractAll]:
         return zipfile.ZipFile(bio)
+
 else:  # pragma: win32 no cover
     _EXT = "tar.gz"
 
