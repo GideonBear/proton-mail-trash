@@ -76,7 +76,8 @@ def main() -> None:
     try:
         hostname = gethostname()
         user = (
-            subprocess.run(  # noqa: S603
+            subprocess  # noqa: S603
+            .run(
                 ["rbw", "get", f"hydroxide {hostname}", "--field", "username"],  # noqa: S607
                 check=True,
                 stdout=subprocess.PIPE,
@@ -85,7 +86,8 @@ def main() -> None:
             .strip()
         )
         password = (
-            subprocess.run(  # noqa: S603
+            subprocess  # noqa: S603
+            .run(
                 ["rbw", "get", f"hydroxide {hostname}"],  # noqa: S607
                 check=True,
                 stdout=subprocess.PIPE,
