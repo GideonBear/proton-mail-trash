@@ -121,7 +121,7 @@ repos:
         pass_filenames: false # Check all files to be thorough
         args: [.] # Removes default `--ignore-missing-imports`
         additional_dependencies:
-          - rich==14.3.1
+          - rich==14.3.2
           - more-itertools==10.8.0
 
   - repo: https://github.com/tox-dev/pyproject-fmt
