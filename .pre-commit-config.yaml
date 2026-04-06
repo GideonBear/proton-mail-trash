@@ -120,7 +120,7 @@ repos:
         args: [.] # Removes default `--ignore-missing-imports`
         additional_dependencies:
           - rich==14.3.3
-          - more-itertools==10.8.0
+          - more-itertools==11.0.1
 
   - repo: https://github.com/tox-dev/pyproject-fmt
     rev: v2.20.0
