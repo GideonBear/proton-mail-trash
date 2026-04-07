@@ -23,7 +23,7 @@ def get_criteria() -> str:
     interval = timedelta(days=30)
 
     end = today - interval
-    return f"(BEFORE {end.strftime('%d-%b-%Y')})"
+    return f"(BEFORE {end.strftime("%d-%b-%Y")})"
 
 
 def get_to_delete(box: IMAP4) -> list[str]:
@@ -38,7 +38,7 @@ def get_to_delete(box: IMAP4) -> list[str]:
         to_delete.append(uid)
         _resp, data = box.uid("fetch", uid, "(BODY[HEADER])")
         msg = mailparser.parsestr(data[0][1].decode())
-        info = f"{msg['From']}, {msg['Date']}, {msg['Subject']}"
+        info = f"{msg["From"]}, {msg["Date"]}, {msg["Subject"]}"
         info = info.replace("\n", "").replace("\r", "")
         print(info)
 
