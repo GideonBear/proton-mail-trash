@@ -43,11 +43,11 @@ def build() -> None:
 def get(user: str) -> Path:
     if not PATH.exists():
         build()
-        assert PATH.exists()  # noqa: S101
+        assert PATH.exists()  # ruff:ignore[assert]
     if not AUTH_PATH.exists():
         print("Authenticating via Hydroxide, you only have to do this once.")
-        subprocess.run([PATH, "auth", user], check=True)  # noqa: S603
-        assert AUTH_PATH.exists()  # noqa: S101
+        subprocess.run([PATH, "auth", user], check=True)  # ruff:ignore[subprocess-without-shell-equals-true]
+        assert AUTH_PATH.exists()  # ruff:ignore[assert]
         print(
             "Authenticated! Please store the bridge password you got, "
             "you will be prompted for it on each run."
