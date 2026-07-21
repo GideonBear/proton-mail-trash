@@ -19,7 +19,7 @@ DELETE_LIMIT = 200
 
 
 def get_criteria() -> str:
-    today = date.today()  # noqa: DTZ011 only using naive datetimes
+    today = date.today()  # ruff:ignore[call-date-today] only using naive datetimes
     interval = timedelta(days=30)
 
     end = today - interval
@@ -62,7 +62,7 @@ def delete(box: IMAP4, to_delete: list[str]) -> None:
         t2 = progress.add_task("Marking...", total=200)
 
         for chunk in chunks:
-            chunk = list(chunk)  # noqa: PLW2901
+            chunk = list(chunk)  # ruff:ignore[redefined-loop-name]
             progress.update(t2, total=len(chunk))
             for j, uid in enumerate(chunk):
                 box.store(uid, "+FLAGS", "\\Deleted")
@@ -76,9 +76,9 @@ def main() -> None:
     try:
         hostname = gethostname()
         user = (
-            subprocess  # noqa: S603
+            subprocess  # ruff:ignore[subprocess-without-shell-equals-true]
             .run(
-                ["rbw", "get", f"hydroxide {hostname}", "--field", "username"],  # noqa: S607
+                ["rbw", "get", f"hydroxide {hostname}", "--field", "username"],  # ruff:ignore[start-process-with-partial-path]
                 check=True,
                 stdout=subprocess.PIPE,
             )
@@ -86,9 +86,9 @@ def main() -> None:
             .strip()
         )
         password = (
-            subprocess  # noqa: S603
+            subprocess  # ruff:ignore[subprocess-without-shell-equals-true]
             .run(
-                ["rbw", "get", f"hydroxide {hostname}"],  # noqa: S607
+                ["rbw", "get", f"hydroxide {hostname}"],  # ruff:ignore[start-process-with-partial-path]
                 check=True,
                 stdout=subprocess.PIPE,
             )

@@ -86,9 +86,9 @@ def _get_url() -> str:
 
 def _install_go(dest: Path) -> None:
     try:
-        resp = urllib.request.urlopen(_get_url())  # noqa: S310
+        resp = urllib.request.urlopen(_get_url())  # ruff:ignore[suspicious-url-open-usage]
     except urllib.error.HTTPError as e:  # pragma: no cover
-        if e.code == 404:  # noqa: PLR2004
+        if e.code == 404:  # ruff:ignore[magic-value-comparison]
             msg = (
                 f"Could not find a version matching your system requirements "
                 f"(os={platform.system().lower()}; arch={_ARCH})"
@@ -103,7 +103,7 @@ def _install_go(dest: Path) -> None:
             f.seek(0)
 
             with _open_archive(f) as archive:
-                archive.extractall(dest)  # type: ignore[arg-type]  # noqa: S202
+                archive.extractall(dest)  # type: ignore[arg-type]  # ruff:ignore[tarfile-unsafe-members]
         shutil.move(dest / "go", dest / ".go")
 
 
@@ -124,7 +124,7 @@ def build(repo_url: str, build_path: str, bin_name: str, bin_dest: Path) -> None
         go_bin = go_root / "bin"
 
         print("Downloading git repo...")
-        subprocess.run(["git", "clone", repo_url, "repo"], check=True)  # noqa: S603, S607
+        subprocess.run(["git", "clone", repo_url, "repo"], check=True)  # ruff:ignore[subprocess-without-shell-equals-true, start-process-with-partial-path]
         env: dict[str, str] = {
             "GOPATH": str(tempdir),
             "GOTOOLCHAIN": "local",
@@ -133,5 +133,5 @@ def build(repo_url: str, build_path: str, bin_name: str, bin_dest: Path) -> None
         }
         with chdir("repo"), set_env(env):
             print("Building...")
-            subprocess.run(["go", "build", build_path], check=True)  # noqa: S603, S607
+            subprocess.run(["go", "build", build_path], check=True)  # ruff:ignore[subprocess-without-shell-equals-true, start-process-with-partial-path]
             shutil.move(bin_name, bin_dest)
