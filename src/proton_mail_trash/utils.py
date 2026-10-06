@@ -7,7 +7,7 @@ from typing import TYPE_CHECKING
 
 
 if TYPE_CHECKING:
-    from collections.abc import Iterator
+    from collections.abc import Generator
     from types import TracebackType
 
 
@@ -23,7 +23,7 @@ class PopenContext(Popen[str]):
 
 
 @contextmanager
-def set_env(environ: dict[str, str]) -> Iterator[None]:
+def set_env(environ: dict[str, str]) -> Generator[None]:
     old_environ = dict(os.environ)
     os.environ.update(environ)
     try:
