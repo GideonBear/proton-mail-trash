@@ -36,7 +36,7 @@ def build() -> None:
     if sys.platform == "win32":
         bin_name += ".exe"
     golang.build(
-        "https://github.com/emersion/hydroxide", "./cmd/hydroxide", bin_name, PATH
+        "https://codeberg.org/emersion/hydroxide", "./cmd/hydroxide", bin_name, PATH
     )
 
 

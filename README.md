@@ -42,4 +42,4 @@ This software might not be an allowed use of Proton's products.
 ## Credits
 
 Only possible thanks
-to [Hydroxide, a third-party, open-source ProtonMail CardDAV, IMAP and SMTP bridge](https://github.com/emersion/hydroxide)!
+to [Hydroxide, a third-party, open-source ProtonMail CardDAV, IMAP and SMTP bridge](https://codeberg.org/emersion/hydroxide)!
