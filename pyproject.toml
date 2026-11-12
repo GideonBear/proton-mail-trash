@@ -4,7 +4,7 @@ requires = [ "uv-build>=0.13,<0.14" ]
 
 [project]
 name = "proton-mail-trash"
-version = "1.2.1"
+version = "1.2.2"
 description = "Permanently delete all messages in your Proton Mail trash older than 30 days"
 readme = "README.md"
 license = "GPL-3.0-only"
